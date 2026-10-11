@@ -1,4 +1,3 @@
-import { cacheLife, cacheTag } from "next/cache";
 import { client, urlFor } from "@/sanity/client";
 import {
   mockClients,
@@ -40,9 +39,6 @@ async function safeFetch<T>(query: string): Promise<T | null> {
 }
 
 export async function getSettings(): Promise<SiteSettings> {
-  "use cache";
-  cacheLife("hours");
-  cacheTag("sanity");
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const d = await safeFetch<any>(`*[_type=="siteSettings"][0]`);
   if (!d) return mockSettings;
@@ -68,9 +64,6 @@ export async function getSettings(): Promise<SiteSettings> {
 }
 
 export async function getHeroSlides(): Promise<HeroSlide[]> {
-  "use cache";
-  cacheLife("hours");
-  cacheTag("sanity");
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const d = await safeFetch<any[]>(`*[_type=="heroSlide"]|order(order asc)`);
   if (!d?.length) return mockHeroSlides;
@@ -84,9 +77,6 @@ export async function getHeroSlides(): Promise<HeroSlide[]> {
 }
 
 export async function getServices(): Promise<Service[]> {
-  "use cache";
-  cacheLife("hours");
-  cacheTag("sanity");
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const d = await safeFetch<any[]>(`*[_type=="service"]|order(order asc)`);
   if (!d?.length) return mockServices;
@@ -99,9 +89,6 @@ export async function getServices(): Promise<Service[]> {
 }
 
 export async function getClients(): Promise<Client[]> {
-  "use cache";
-  cacheLife("hours");
-  cacheTag("sanity");
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const d = await safeFetch<any[]>(`*[_type=="client"]|order(name asc)`);
   if (!d?.length) return mockClients;
@@ -132,9 +119,6 @@ const mapProject = (p: any, i: number): Project => ({
 });
 
 export async function getProjects(): Promise<Project[]> {
-  "use cache";
-  cacheLife("hours");
-  cacheTag("sanity");
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const d = await safeFetch<any[]>(`*[_type=="project"]|order(year desc)`);
   if (!d?.length) return mockProjects;
@@ -147,9 +131,6 @@ export async function getProject(slug: string): Promise<Project | null> {
 }
 
 export async function getTestimonials(): Promise<Testimonial[]> {
-  "use cache";
-  cacheLife("hours");
-  cacheTag("sanity");
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const d = await safeFetch<any[]>(`*[_type=="testimonial"]`);
   if (!d?.length) return mockTestimonials;
@@ -163,9 +144,6 @@ export async function getTestimonials(): Promise<Testimonial[]> {
 }
 
 export async function getJobs(): Promise<JobOpening[]> {
-  "use cache";
-  cacheLife("hours");
-  cacheTag("sanity");
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const d = await safeFetch<any[]>(`*[_type=="jobOpening"]`);
   if (!d?.length) return mockJobs;

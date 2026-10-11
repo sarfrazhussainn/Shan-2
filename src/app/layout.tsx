@@ -16,7 +16,12 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${inter.variable} ${outfit.variable} h-full`}>
+    <html
+      lang="en"
+      data-scroll-behavior="smooth"
+      suppressHydrationWarning
+      className={`${inter.variable} ${outfit.variable} h-full`}
+    >
       <body className="flex min-h-full flex-col">{children}</body>
     </html>
   );

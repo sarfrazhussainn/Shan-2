@@ -1,6 +1,8 @@
 import type { MetadataRoute } from "next";
 
-const base = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+export const dynamic = "force-static";
+
+const base = process.env.NEXT_PUBLIC_SITE_URL || "https://shantesting.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return ["", "/clients", "/projects", "/careers", "/contact"].map((p) => ({ url: `${base}${p}` }));
