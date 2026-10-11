@@ -76,6 +76,31 @@ h1, h2, h3, h4 {
   transition: width 0.3s;
 }
 
+/* Hide bulky Swiper navigation arrows on mobile touchscreens; show sleek frosted glass pills on desktop */
+.swiper-button-prev,
+.swiper-button-next {
+  display: none !important;
+}
+
+@media (min-width: 640px) {
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: flex !important;
+    width: 38px !important;
+    height: 38px !important;
+    background: rgba(6, 20, 40, 0.6) !important;
+    border-radius: 9999px !important;
+    backdrop-filter: blur(6px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    transition: background-color 0.2s, transform 0.2s !important;
+  }
+  .swiper-button-prev:hover,
+  .swiper-button-next:hover {
+    background: rgba(11, 37, 69, 0.85) !important;
+    transform: scale(1.08);
+  }
+}
+
 @keyframes marquee-fade {
   from { opacity: 0; }
   to { opacity: 1; }
