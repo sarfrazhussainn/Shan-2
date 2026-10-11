@@ -12,7 +12,7 @@ export const siteSettings = defineType({
     defineField({ name: "tagline", type: "string" }),
     defineField({ name: "email", type: "string" }),
     defineField({ name: "phone", type: "string" }),
-    defineField({ name: "whatsapp", type: "string", description: "Digits only with country code, e.g. 919003362976" }),
+    defineField({ name: "whatsapp", type: "string", description: "Digits only with country code, e.g. 966558960193" }),
     defineField({ name: "address", type: "string" }),
     defineField({ name: "hours", type: "string" }),
     defineField({ name: "mapEmbedUrl", type: "url" }),

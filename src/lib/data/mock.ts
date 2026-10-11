@@ -12,8 +12,8 @@ export const mockSettings: SiteSettings = {
   companyName: "Shan Testing & Trading Company",
   tagline: "Precision testing. Reliable trading. Built on trust.",
   email: "info@shantesting.com",
-  phone: "+91 90033 62976",
-  whatsapp: "919003362976",
+  phone: "+966 55 896 0193",
+  whatsapp: "966558960193",
   address: "Al Khobar, Eastern Province, Kingdom of Saudi Arabia",
   hours: "Sun – Thu: 8:00 AM – 5:00 PM",
   mapEmbedUrl:
