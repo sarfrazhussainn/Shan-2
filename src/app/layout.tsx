@@ -12,6 +12,11 @@ export const metadata: Metadata = {
   },
   description:
     "Shan Testing and Trading Company in Al Khobar offers materials testing, inspection, calibration and general trading services across Saudi Arabia.",
+  icons: {
+    icon: "/logo-icon.png",
+    shortcut: "/logo-icon.png",
+    apple: "/logo-icon.png",
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

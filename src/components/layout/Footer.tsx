@@ -1,18 +1,16 @@
 import { Clock, Mail, MapPin, Phone } from "lucide-react";
 import Link from "next/link";
 import type { SiteSettings } from "@/lib/types";
+import { BrandLogo } from "./BrandLogo";
 
 export function Footer({ s }: { s: SiteSettings }) {
   return (
     <footer className="hero-navy-gradient pattern-geo relative text-slate-200">
       <div className="mx-auto grid max-w-7xl gap-8 px-4 py-12 sm:gap-12 sm:px-8 sm:py-16 md:grid-cols-4">
         <div className="md:col-span-2">
-          <div className="flex items-center gap-3">
-            <span className="grid h-11 w-11 place-items-center rounded-xl bg-gold-500 font-display text-xl font-bold text-[#061428]">
-              S
-            </span>
-            <span className="font-display text-lg font-bold text-white sm:text-xl">{s.companyName}</span>
-          </div>
+          <Link href="/" className="inline-block">
+            <BrandLogo isScrolled={false} />
+          </Link>
           <p className="mt-4 max-w-md text-xs leading-relaxed text-slate-300 sm:mt-5 sm:text-sm">{s.tagline}</p>
         </div>
 

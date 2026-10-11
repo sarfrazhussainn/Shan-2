@@ -6,6 +6,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
+import { BrandLogo } from "./BrandLogo";
+
 const links = [
   { href: "/", label: "Home" },
   { href: "/clients", label: "Clients" },
@@ -39,22 +41,8 @@ export function Navbar({ phone }: { phone: string }) {
       }`}
     >
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 sm:px-8">
-        <Link href="/" className="flex items-center gap-3" aria-label="Shan Testing & Trading Co. home">
-          <span
-            className={`grid h-11 w-11 place-items-center rounded-xl font-display text-xl font-bold shadow-md transition-colors ${
-              scrolled || open
-                ? "bg-[#0b2545] text-gold-400"
-                : "bg-gold-500 text-[#061428]"
-            }`}
-          >
-            S
-          </span>
-          <span className={`leading-tight transition-colors ${scrolled || open ? "text-[#0b2545]" : "text-white"}`}>
-            <span className="block font-display text-lg font-semibold tracking-tight">Shan Testing</span>
-            <span className="block text-[11px] font-medium uppercase tracking-[0.18em] opacity-80">
-              & Trading Co.
-            </span>
-          </span>
+        <Link href="/" className="group flex items-center" aria-label="Shan Testing and Trading Company home">
+          <BrandLogo isScrolled={scrolled || open} />
         </Link>
 
         <nav className="hidden items-center gap-1 lg:flex" aria-label="Main">
